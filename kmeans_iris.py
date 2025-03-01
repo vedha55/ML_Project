@@ -18,8 +18,7 @@ def kmeans_clustering():
 
 def plot_2d_scatter(df):
     plt.figure(figsize=(8, 6))
-    sns.scatterplot(x=df['sepal length (cm)'], 
-        y=df['sepal width (cm)'], hue=df['Cluster'], palette='viridis')
+    sns.scatterplot(x=df['sepal length (cm)'],y=df['sepal width (cm)'], hue=df['Cluster'], palette='viridis')
     plt.xlabel("Sepal Length (cm)")
     plt.ylabel("Sepal Width (cm)")
     plt.title("K-Means Clustering (2D View)")
@@ -27,8 +26,6 @@ def plot_2d_scatter(df):
     plt.close()
 
 def plot_3d_scatter(df):
-    fig = px.scatter_3d(df, x='sepal length (cm)', y='sepal width (cm)', 
-        z='petal length (cm)', color=df['Cluster'].astype(str), 
-        title="K-Means Clustering (3D View)")
+    fig = px.scatter_3d(df, x='sepal length (cm)', y='sepal width (cm)',z='petal length (cm)', color=df['Cluster'].astype(str),title="K-Means Clustering (3D View)")
     fig.write_html("static/plot_3d.html")
 
